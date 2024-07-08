@@ -1,0 +1,72 @@
+{
+  // React-Hooks
+  "react-state": {
+    "scope": "javascriptreact, javascript",
+    "prefix": "state",
+    "body": [
+      "const [${1:state}, set${2:State}] = React.useState($0)"
+    ],
+    "description": ""
+  },
+  "typescript-react-state": {
+    "scope": "typescriptreact, typescript",
+    "prefix": "state",
+    "body": [
+      "const [${1:state}, set${2:State}] = React.useState<${3:String}>($0)"
+    ],
+    "description": ""
+  },
+  
+  // Components
+  "setup-component-with-children-props": {
+    "prefix": "scc",
+    "scope": "typescript, typescriptreact",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default function $TM_FILENAME_BASE({ children }: { children: React.ReactNode }) {",
+      "\treturn (",
+      "\t\t<${1:div}>",
+      "\t\t\t{children}",
+      "\t\t</$1>",
+      "\t);",
+      "}"
+    ],
+    "description": ""
+  },
+  "setup-component": {
+    "prefix": "sc",
+    "scope": "typescriptreact, typescript, javascript, javascriptreact",
+    "body": [
+      "import React from 'react'",
+      "",
+      "export default function $TM_FILENAME_BASE() {",
+      "\treturn (",
+      "\t\t$0",
+      "\t);",
+      "}"
+    ],
+    "description": ""
+  },
+  "setup-component-with-propstype": {
+    "prefix": "scp",
+    "scope": "typescript, typescriptreact",
+    "body": [
+      "import React from 'react'",
+      "import { cn } from '@/lib/utils'",
+      "",
+      "interface PropsType extends React.ComponentProps<'$1'> {",
+      "\t$2",
+      "}",
+      "",
+      "export default function $TM_FILENAME_BASE({ children, className, ...props }: PropsType) {",
+      "\treturn (",
+      "\t\t<${1:div} className={cn('$3', className)} {...props}>",
+      "\t\t\t${0}",
+      "\t\t</$1>",
+      "\t)",
+      "}"
+    ],
+    "description": ""
+  }
+}
